@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>삼호교회 50주년 전교인 한마음 둘레길 걷기대회 공식 모바일 가이드</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Pretendard & Noto Serif KR -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@600;700;900&display=swap">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+            serif: ['Noto Serif KR', 'serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#E5A93C',
+              amber: '#D97706',
+              burgundy: '#881337',
+              wine: '#9F1239',
+              darkForest: '#064E3B',
+              forest: '#047857',
+              warmBg: '#FDFBF7',
+              cardBg: '#FFFFFF',
+            }
+          },
+          boxShadow: {
+            soft: '0 8px 30px rgba(0, 0, 0, 0.05)',
+            card: '0 4px 20px -2px rgba(136, 19, 55, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F8F5EE;
+      color: #27272A;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* 단풍 잎 떨어지는 애니메이션 */
+    @keyframes fall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(180px) rotate(360deg); opacity: 0; }
+    }
+    .animate-fall-1 { animation: fall 6s linear infinite; }
+    .animate-fall-2 { animation: fall 8s 2s linear infinite; }
+  </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between selection:bg-amber-200">
+
+  <!-- 상단 네비게이션 헤더 -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100 shadow-sm transition-all duration-200">
+    <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-rose-900 via-amber-700 to-amber-500 flex items-center justify-center text-white text-xs font-black shadow-md shadow-amber-800/20">
+          50th
+        </div>
+        <div>
+          <span class="text-[10px] font-bold text-amber-700 tracking-wider block">SAMHO BAPTIST CHURCH</span>
+          <span class="text-sm font-extrabold text-stone-900 leading-tight block">50주년 둘레길 걷기대회</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-1.5">
+        <button onclick="shareLink()" class="w-9 h-9 flex items-center justify-center text-stone-600 hover:text-amber-700 active:scale-95 transition bg-stone-100 hover:bg-amber-50 rounded-full" title="공유하기">
+          <i class="fa-solid fa-arrow-up-from-bracket text-sm"></i>
+        </button>
+        <button onclick="openEmergencyModal()" class="w-9 h-9 flex items-center justify-center text-rose-600 hover:text-rose-700 active:scale-95 transition bg-rose-50 hover:bg-rose-100 rounded-full" title="비상 연락처">
+          <i class="fa-solid fa-phone-volume text-sm"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 모바일 래퍼 -->
+  <main class="max-w-md mx-auto w-full px-4 pt-3 pb-24 space-y-6">
+
+    <!-- 1. 메인 히어로 배너 (50주년 희년 감성) -->
+    <section class="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-stone-950 via-rose-950 to-amber-950 text-white p-6 shadow-card border border-amber-500/20">
+      <!-- 배경 그래픽 데코 -->
+      <div class="absolute -right-10 -top-10 w-44 h-44 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute left-6 -bottom-10 w-36 h-36 bg-rose-600/20 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute right-4 bottom-2 text-white/5 text-9xl pointer-events-none font-serif font-black">
+        50
+      </div>
+
+      <div class="relative z-10 space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-300/30 text-amber-300 text-xs font-bold">
+          <i class="fa-solid fa-wheat-awn"></i> 창립 50주년 희년 가을행사 (1976 - 2026)
+        </div>
+
+        <h1 class="text-2xl sm:text-[27px] font-extrabold font-serif tracking-tight leading-snug">
+          전교인 한마음<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200">둘레길 걷기대회</span>
+        </h1>
+
+        <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+          50년의 은혜를 온 성도가 함께 찬양하며, 오색 단풍으로 물든 서울대공원 호숫가를 함께 걷는 축제입니다.
+        </p>
+
+        <!-- 행사 필수 개요 카드 2칸 -->
+        <div class="pt-2 grid grid-cols-2 gap-2 text-xs">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 flex flex-col justify-between">
+            <span class="text-amber-300 font-bold block mb-1 text-[11px]"><i class="fa-regular fa-calendar-check mr-1"></i>일시</span>
+            <span class="text-stone-100 font-bold text-xs leading-snug">11월 첫째 주 주일<br>13:00 ~ 17:00</span>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 flex flex-col justify-between">
+            <span class="text-amber-300 font-bold block mb-1 text-[11px]"><i class="fa-solid fa-location-dot mr-1"></i>장소</span>
+            <span class="text-stone-100 font-bold text-xs leading-snug">서울대공원 호숫가 둘레길<br>(약 2.8km 순환)</span>
+          </div>
+        </div>
+
+        <!-- 당일 진행 상태 배지 -->
+        <div class="pt-1 flex items-center justify-between text-xs text-amber-200/90 font-medium">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>전교인 약 400명 참석</span>
+          </span>
+          <span class="text-[11px] bg-white/10 px-2.5 py-1 rounded-full text-stone-300">
+            45인승 버스 9대 운행
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 빠른 앵커 네비게이션 버튼 -->
+    <nav class="grid grid-cols-4 gap-2 text-center text-xs font-bold">
+      <a href="#section-timetable" class="bg-white p-3 rounded-2xl shadow-sm border border-stone-200 hover:border-amber-400 active:bg-amber-50 text-stone-700 transition flex flex-col items-center gap-1.5">
+        <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center">
+          <i class="fa-solid fa-list-check"></i>
+        </div>
+        <span>일정표</span>
+      </a>
+      <a href="#section-transport" class="bg-white p-3 rounded-2xl shadow-sm border border-stone-200 hover:border-amber-400 active:bg-amber-50 text-stone-700 transition flex flex-col items-center gap-1.5">
+        <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-800 flex items-center justify-center">
+          <i class="fa-solid fa-bus-simple"></i>
+        </div>
+        <span>승하차/집결</span>
+      </a>
+      <a href="#section-events" class="bg-white p-3 rounded-2xl shadow-sm border border-stone-200 hover:border-amber-400 active:bg-amber-50 text-stone-700 transition flex flex-col items-center gap-1.5">
+        <div class="w-8 h-8 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <span>경품·미션</span>
+      </a>
+      <a href="#section-map" class="bg-white p-3 rounded-2xl shadow-sm border border-stone-200 hover:border-amber-400 active:bg-amber-50 text-stone-700 transition flex flex-col items-center gap-1.5">
+        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center">
+          <i class="fa-solid fa-map"></i>
+        </div>
+        <span>둘레길약도</span>
+      </a>
+    </nav>
+
+    <!-- 2. 행사 타임테이블 (시간대별 타임라인) -->
+    <section id="section-timetable" class="bg-white rounded-[26px] p-5 shadow-soft border border-stone-200/80 space-y-4">
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-extrabold text-stone-900">당일 상세 일정표</h2>
+            <p class="text-xs text-stone-500">시간을 꼭 준수하여 함께 이동해 주세요</p>
+          </div>
+        </div>
+        <span class="text-[11px] font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+          오후 1:00 ~ 5:00
+        </span>
+      </div>
+
+      <!-- 타임라인 아이템 리스트 -->
+      <div class="relative pl-6 space-y-5 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-amber-600 before:via-rose-500 before:to-stone-300">
+        
+        <!-- STEP 1 -->
+        <div class="relative">
+          <div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-amber-600 border-2 border-white shadow"></div>
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs font-black text-amber-700">13:00</span>
+            <span class="text-[10px] font-bold bg-stone-100 text-stone-600 px-2 py-0.5 rounded-full">교회 출발</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900 mt-0.5">교회 점심 뷔페 후 버스 탑승 & 출발</h3>
+          <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+            • <strong class="text-stone-800">SC제일은행 앞</strong> 45인승 버스 9대 순차 탑승<br>
+            • 호차별 인원 점검 및 안전벨트 착용 후 서울대공원으로 출발합니다.
+          </p>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="relative">
+          <div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-rose-600 border-2 border-white shadow"></div>
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs font-black text-rose-700">13:30 ~ 13:45</span>
+            <span class="text-[10px] font-bold bg-rose-50 text-rose-700 px-2 py-0.5 rounded-full border border-rose-200">하차 지점</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900 mt-0.5">서울대공원 도착 및 안전 하차</h3>
+          <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+            • <strong class="text-rose-700 font-bold">하차 장소:</strong> 바다주차장/장애인주차장 사이 <span class="bg-rose-50 font-bold px-1 rounded text-rose-900">[국립현대미술관 과천 입간판 앞]</span><br>
+            • 인솔 스텝 안내에 따라 잔디광장 본부로 보행 이동 (약 3분 거리).
+          </p>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="relative">
+          <div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-amber-500 border-2 border-white shadow"></div>
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs font-black text-amber-700">14:00</span>
+            <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">전체 집결</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900 mt-0.5">전체 모임 본부 집결 & 패키지 수령</h3>
+          <div class="mt-2 p-3 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-xs text-stone-700 space-y-1.5">
+            <p class="font-extrabold text-amber-950 flex items-center gap-1.5">
+              <i class="fa-solid fa-star text-amber-500"></i> 장소: 청계저수지 수변 잔디광장 (노란 별표)
+            </p>
+            <p>🎟️ <strong>행운권 1인 1매 배부</strong> (15시 대추첨용 / 분실 주의!)</p>
+            <p>🥤 <strong>간식 꾸러미 수령</strong> (생수, 초콜릿, 사탕 세트)</p>
+            <p>📸 <strong>50주년 전교인 단체사진</strong> 촬영 (청계호수 수변 펜스)</p>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="relative">
+          <div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-emerald-600 border-2 border-white shadow"></div>
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs font-black text-emerald-700">14:00 ~ 15:00 (1시간)</span>
+            <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">자유 걷기</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900 mt-0.5">호숫가 둘레길 2.8km 목장별 자유 걷기</h3>
+          <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+            • 청계호수의 가을 정취를 만끽하며 목장원들과 교제 및 미션 사진 촬영<br>
+            • <strong class="text-rose-700 font-bold">15:00까지 잔디광장 본부로 반드시 재집합</strong>해 주세요.
+          </p>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="relative">
+          <div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-purple-600 border-2 border-white shadow"></div>
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs font-black text-purple-700">15:00 ~ 15:50</span>
+            <span class="text-[10px] font-bold bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">축제 & 추첨</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900 mt-0.5">전교인 축제 한마당 & 행운권 대추첨</h3>
+          <div class="mt-2 p-3 rounded-2xl bg-purple-50/80 border border-purple-200/80 text-xs text-stone-700 space-y-1">
+            <p class="font-extrabold text-purple-950">🎉 전교인 레크레이션 & 성경암송 / OX 퀴즈</p>
+            <p>🎁 <strong>행운권 대추첨:</strong> 1등 다이슨 에어랩 외 최고급 경품 4점 + 안수집사회 후원 40여점 추첨!</p>
+            <p>🏆 <strong>포토 콘테스트 시상:</strong> 1등(10만), 2등(7만), 3등(5만) 777상품권 수여</p>
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="relative">
+          <div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-stone-700 border-2 border-white shadow"></div>
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs font-black text-stone-700">16:00 ~ 17:00</span>
+            <span class="text-[10px] font-bold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-full">안전 귀가</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900 mt-0.5">버스 승차 및 교회 복귀 / 은혜로운 해산</h3>
+          <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+            • <strong class="text-rose-700 font-bold">16:00까지 하차 장소(국립현대미술관 입간판 앞)로 전원 승차 집결</strong><br>
+            • 16:30 ~ 17:00 삼호교회 도착 및 안전 귀가
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. 교통 및 집결 장소 안내 (버스 vs 자차 탭) -->
+    <section id="section-transport" class="bg-white rounded-[26px] p-5 shadow-soft border border-stone-200/80 space-y-4">
+      <div class="flex items-center gap-2 border-b border-stone-100 pb-3">
+        <div class="w-8 h-8 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-extrabold text-stone-900">교통편별 집결 & 승하차 안내</h2>
+          <p class="text-xs text-stone-500">본인의 이동 방법에 맞는 탭을 확인하세요</p>
+        </div>
+      </div>
+
+      <!-- 인터랙티브 탭 전환 버튼 -->
+      <div class="grid grid-cols-2 p-1 bg-stone-100 rounded-2xl text-xs font-bold">
+        <button id="btnTabBus" onclick="changeTransportTab('bus')" class="py-2.5 rounded-xl transition-all duration-200 bg-white text-stone-900 shadow-sm flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-bus text-amber-600"></i> 버스 탑승 성도
+        </button>
+        <button id="btnTabCar" onclick="changeTransportTab('car')" class="py-2.5 rounded-xl transition-all duration-200 text-stone-500 hover:text-stone-800 flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-car text-rose-600"></i> 자차 이용 성도
+        </button>
+      </div>
+
+      <!-- 1) 버스 탑승자 컨텐츠 -->
+      <div id="contentBus" class="space-y-3">
+        <div class="rounded-2xl bg-rose-50 border border-rose-200 p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-rose-600 text-white text-[10px] font-bold">
+              <i class="fa-solid fa-location-dot"></i> 공식 승·하차 지점
+            </span>
+            <span class="text-xs font-bold text-rose-800">13:30 하차 / 16:00 승차</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900">
+            [국립현대미술관 과천 안내 입간판 앞]
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            바다주차장과 장애인주차장 사이 도로변 보도블록 구역입니다. <strong>13:30 하차 지점과 16:00 승차 지점이 정확히 동일</strong>하므로 위치를 꼭 숙지해 주세요.
+          </p>
+          <div class="p-2.5 bg-white/80 rounded-xl border border-rose-200 text-xs text-rose-900 font-medium">
+            ⚠️ <strong>16:00 정시 출발 안내:</strong> 15시 50분까지 잔디광장에서 출발하여 16:00까지 지정된 버스 호차에 전원 착석해 주셔야 합니다.
+          </div>
+        </div>
+
+        <!-- 승하차장 실물 사진 카드 -->
+        <div class="rounded-2xl border border-stone-200 overflow-hidden bg-stone-50">
+          <div class="relative h-44 bg-stone-200">
+            <img src="https://lh3.googleusercontent.com/gg/AJWXcNcTb2SMNLPwajHbGeMRv5nDV6rsXpdvZrzNS809qyQQ5S_OVEyhboeNaLtxrtiMIqRAcxtZ0O-SgtrEWi27CMS1cbbxL7gj3iIdT7_MWkLs132LlmtX2wsdKyLhL6mxoFJEVFn0ppXUCBZ4dbCp8NMFk_xUmSXbou9LBx-R6QzJn4QAT3tnf8pWEy8cGC-YMR4X-N-TWLpasrF4g4PVMZJUK8B-CkYOYuEMCZc1PQh9joBhHZy_Fp0esjSm6etgFKFgatS7FnDUlucQxlMKzJyD5gcx19SbXA=s0" alt="국립현대미술관 과천 입간판 앞 승하차장" class="w-full h-full object-cover">
+            <span class="absolute bottom-2 left-2 bg-black/70 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur font-medium">
+              국립현대미술관 과천 입간판 앞 실제 전경
+            </span>
+          </div>
+          <div class="p-3 text-xs text-stone-600">
+            넓은 보도블록과 대형 검은색 안내판이 있는 인도입니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2) 자차 이용자 컨텐츠 (기본 숨김) -->
+      <div id="contentCar" class="space-y-3 hidden">
+        <div class="rounded-2xl bg-amber-50 border border-amber-200 p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold">
+              <i class="fa-solid fa-star"></i> 자차 직접 집결 거점
+            </span>
+            <span class="text-xs font-bold text-amber-800">14:00까지 집결</span>
+          </div>
+          <h3 class="text-sm font-bold text-stone-900">
+            [청계저수지 수변 잔디광장 (노란 별표 구역)]
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            서울대공원 공영주차장(바다, 하늘, 산들 주차장)에 개별 주차 후, 종합안내소 좌측(치안센터 뒤편) <strong>잔디광장 운영 본부 부스로 14:00까지 직접 와주세요.</strong>
+          </p>
+          <div class="p-2.5 bg-white/90 rounded-xl border border-amber-200 text-xs text-amber-950 space-y-1">
+            <p class="font-extrabold text-rose-700">⚠️ 자차 성도 필독 주의사항:</p>
+            <p>1. 14시 본부 부스에서 <strong>행운권 추첨권과 간식 꾸러미</strong>를 꼭 직접 수령하세요!</p>
+            <p>2. 주말 가을 단풍 성수기로 주차장 입차 정체가 심할 수 있으니 <strong>13:30까지 주차장에 도착</strong>하시기를 강력 권장합니다.</p>
+          </div>
+        </div>
+
+        <!-- 모임 본부 잔디광장 실물 사진 카드 -->
+        <div class="rounded-2xl border border-stone-200 overflow-hidden bg-stone-50">
+          <div class="relative h-44 bg-stone-200">
+            <img src="https://lh3.googleusercontent.com/gg/AJWXcNcKLRfwcoL9gDkER-EY4MPxAUG2yFNZ0_do7diEA9qzVIvujY_KFEbdgDkaN0ZhypPuslv9EjqTk-bYPpGKNoJ8VieUUZRmHgFjqRxl4Ei8r36B82aHbfXIRL5L1oGwpHeDjwh2NUY9dsaEb4pZ2lOlxWOUPuToLZuycRhL2x-5JhXBgqma9AJ_3pZib8hm79-aEsQXWBpRnwx9XBMSuJnGvsGuqn-qRbnn1jT6d3hpfzdWZjBkcxQ5c8rsb21ljyXdQWTGwg8K8pzlqqCBB9WwY46C4ExHcko=s0" alt="전체 모임 본부 잔디광장" class="w-full h-full object-cover">
+            <span class="absolute bottom-2 left-2 bg-black/70 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur font-medium">
+              청계저수지 수변 잔디광장 전경
+            </span>
+          </div>
+          <div class="p-3 text-xs text-stone-600">
+            탁 트인 잔디밭과 단풍나무가 펼쳐진 야외 운영 본부 공간입니다.
+          </div>
+        </div>
+
+        <!-- 내비게이션 바로가기 연동 버튼 -->
+        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+          <p class="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+            <i class="fa-solid fa-diamond-turn-right text-amber-600"></i> 내비게이션 목적지 빠른 실행
+          </p>
+          <div class="grid grid-cols-3 gap-1.5 text-center text-xs">
+            <a href="https://map.kakao.com/link/search/서울대공원바다주차장" target="_blank" rel="noopener" class="py-2 px-1 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 rounded-xl font-bold flex items-center justify-center gap-1 active:scale-95 transition">
+              <span>카카오맵</span>
+            </a>
+            <a href="https://map.naver.com/p/search/서울대공원%20바다주차장" target="_blank" rel="noopener" class="py-2 px-1 bg-[#03C75A] hover:bg-[#02B150] text-white rounded-xl font-bold flex items-center justify-center gap-1 active:scale-95 transition">
+              <span>네이버지도</span>
+            </a>
+            <a href="https://tmap.life/search?q=서울대공원바다주차장" target="_blank" rel="noopener" class="py-2 px-1 bg-[#0051FF] hover:bg-[#0044D6] text-white rounded-xl font-bold flex items-center justify-center gap-1 active:scale-95 transition">
+              <span>Tmap</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 둘레길 코스 맵 & 뷰포인트 -->
+    <section id="section-map" class="bg-white rounded-[26px] p-5 shadow-soft border border-stone-200/80 space-y-4">
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-person-walking"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-extrabold text-stone-900">호숫가 둘레길 코스 안내</h2>
+            <p class="text-xs text-stone-500">2.8km 순환 평지길 (약 50분~1시간 소요)</p>
+          </div>
+        </div>
+        <span class="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+          초보자·어르신 환영
+        </span>
+      </div>
+
+      <!-- 지도 약도 카드 -->
+      <div class="rounded-2xl border border-stone-200 overflow-hidden bg-stone-50 space-y-2 p-2">
+        <div class="rounded-xl overflow-hidden bg-white border border-stone-200">
+          <img src="https://lh3.googleusercontent.com/gg-dl/AHiVA1kqgak_V15NBOgkTVfoSPnqUWasiwVZqI1Pdjyk-XsMAjXelKPinaGG5S_iBZMhbbQPzEMHVTWU_ZBR8ej39kHZGPaDU7HkiEIu30B6GKGJbkDtWEHnJnQfCoOh_u2ezPXKg2MA-ZywqZzIbzAnk2UmFw0HfQ3gh1Kv-yhdbRVfGBDk8Q" alt="서울대공원 둘레길 약도" class="w-full h-auto object-contain">
+        </div>
+        <p class="text-[11px] text-stone-500 text-center font-medium">
+          위 약도의 빨간색 순환선이 <strong>호숫가 둘레길(2.8km)</strong> 코스입니다.
+        </p>
+      </div>
+
+      <!-- 4대 거점 스탬프 안내 -->
+      <div class="grid grid-cols-2 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200 flex items-start gap-2">
+          <span class="w-5 h-5 rounded-full bg-amber-500 text-white font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5">1</span>
+          <div>
+            <strong class="text-amber-950 font-bold block">만남의 광장</strong>
+            <span class="text-[11px] text-stone-600">진입로 넓은 보도블록</span>
+          </div>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200 flex items-start gap-2">
+          <span class="w-5 h-5 rounded-full bg-amber-500 text-white font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5">2</span>
+          <div>
+            <strong class="text-amber-950 font-bold block">청계저수지 둑방길</strong>
+            <span class="text-[11px] text-stone-600">탁 트인 호수 풍경 조망</span>
+          </div>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200 flex items-start gap-2">
+          <span class="w-5 h-5 rounded-full bg-amber-500 text-white font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5">3</span>
+          <div>
+            <strong class="text-amber-950 font-bold block">서울랜드 앞 다리</strong>
+            <span class="text-[11px] text-stone-600">수변 메타세쿼이아길</span>
+          </div>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200 flex items-start gap-2">
+          <span class="w-5 h-5 rounded-full bg-amber-500 text-white font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5">4</span>
+          <div>
+            <strong class="text-amber-950 font-bold block">호숫가 전망 좋은 길</strong>
+            <span class="text-[11px] text-stone-600">청계산 단풍 뷰포인트</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 계단 vs 우회로 분리 안내 -->
+      <div class="p-3 bg-emerald-50/80 rounded-2xl border border-emerald-200 text-xs text-stone-700 space-y-1">
+        <p class="font-extrabold text-emerald-950 flex items-center gap-1.5">
+          <i class="fa-solid fa-person-cane text-emerald-700"></i> 목재 계단 구간 vs 평지 우회로 안내
+        </p>
+        <p class="leading-relaxed">
+          코스 후반에 야트막한 동산을 오르는 목재 계단 구간이 있습니다. <strong>유모차를 동반하셨거나 계단이 불편하신 어르신</strong>은 안내요원의 신호에 따라 <strong>완만한 평지 수변길(우회로)</strong>로 편안하게 직진해 주시기 바랍니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. 이벤트 및 경품 안내 섹션 -->
+    <section id="section-events" class="bg-white rounded-[26px] p-5 shadow-soft border border-stone-200/80 space-y-4">
+      <div class="flex items-center gap-2 border-b border-stone-100 pb-3">
+        <div class="w-8 h-8 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-extrabold text-stone-900">풍성한 경품 & 축제 이벤트</h2>
+          <p class="text-xs text-stone-500">참석자 10% 이상이 선물 당첨의 기쁨을 누립니다!</p>
+        </div>
+      </div>
+
+      <!-- 1등 다이슨 에어랩 메인 경품 카드 -->
+      <div class="rounded-2xl bg-gradient-to-br from-amber-500 via-amber-600 to-rose-700 text-white p-4 shadow-md space-y-2 relative overflow-hidden">
+        <div class="absolute -right-4 -bottom-4 text-white/10 text-8xl pointer-events-none">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="flex items-center justify-between relative z-10">
+          <span class="bg-white/20 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold tracking-wider">
+            LUCKY DRAW
+          </span>
+          <span class="text-xs text-amber-100 font-semibold">15:00 잔디광장 추첨</span>
+        </div>
+        <h3 class="text-base font-extrabold relative z-10">전교인 행운권 대추첨 (프리미엄 5점)</h3>
+        <ul class="text-xs space-y-1 text-amber-50 relative z-10 leading-relaxed">
+          <li class="font-bold text-white text-sm">✨ <strong>1등 대상:</strong> 다이슨 에어랩 멀티 스타일러 (50만원 상당)</li>
+          <li>🎁 <strong>2~5등 우수상:</strong> 최고급 가전 및 100만원 상당 선물 (4점)</li>
+          <li class="text-[11px] text-amber-200 pt-1">
+            ※ 14시 본부에서 수령하신 행운권은 추첨 순간까지 꼭 소지해 주세요!
+          </li>
+        </ul>
+      </div>
+
+      <!-- 안수집사회 자발적 찬조 선물 40여점 -->
+      <div class="rounded-2xl bg-stone-50 border border-stone-200 p-4 space-y-2">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-stone-900 flex items-center gap-1.5">
+            <i class="fa-solid fa-hand-holding-heart text-rose-500"></i> 안수집사회 자발적 찬조 선물
+          </h3>
+          <span class="text-xs font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200">40여 점 준비</span>
+        </div>
+        <p class="text-xs text-stone-600 leading-relaxed">
+          안수집사 43명 전원의 자발적인 찬조로 준비된 풍성한 선물 40여 점과 다양한 상품권이 OX 퀴즈, 성경암송, 레크레이션을 통해 아낌없이 쏟아집니다!
+        </p>
+      </div>
+
+      <!-- 목장별 포토 콘테스트 미션 안내 -->
+      <div class="rounded-2xl bg-amber-50/80 border border-amber-200 p-4 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-amber-950 flex items-center gap-1.5">
+            <i class="fa-solid fa-camera-retro text-amber-700"></i> 목장별 가을 사진 콘테스트
+          </h3>
+          <span class="text-[11px] font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full border border-amber-200">총 22만원 상품권</span>
+        </div>
+        
+        <div class="p-3 bg-white rounded-xl border border-amber-200 text-xs text-stone-700 space-y-1.5">
+          <p class="font-bold text-stone-900 flex items-center gap-1">
+            <i class="fa-solid fa-dice text-amber-600"></i> 당일 미션 방식:
+          </p>
+          <p class="leading-relaxed">
+            14:00 잔디광장 본부에서 <strong>'랜덤 뽑기'</strong>로 목장별 특별 미션 포즈/주제가 공개됩니다!
+          </p>
+          <div class="bg-amber-50 p-2 rounded-lg text-amber-900 text-[11px] font-semibold">
+            📸 <strong>꿀팁:</strong> 둘레길을 걷는 동안 단풍과 호수를 배경으로 목장원들과 감동적이고 유쾌한 단체 사진을 미리 많이 남겨두세요!
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-1.5 text-center text-xs">
+          <div class="bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm">
+            <span class="text-[10px] text-amber-600 font-bold block">1등 목장</span>
+            <span class="text-xs font-black text-stone-900">777상품권 10만원</span>
+          </div>
+          <div class="bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm">
+            <span class="text-[10px] text-stone-500 font-bold block">2등 목장</span>
+            <span class="text-xs font-black text-stone-900">777상품권 7만원</span>
+          </div>
+          <div class="bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm">
+            <span class="text-[10px] text-amber-700 font-bold block">3등 목장</span>
+            <span class="text-xs font-black text-stone-900">777상품권 5만원</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 안전 수칙 및 행동 요령 -->
+    <section class="bg-white rounded-[26px] p-5 shadow-soft border border-stone-200/80 space-y-3">
+      <div class="flex items-center gap-2 border-b border-stone-100 pb-3">
+        <div class="w-8 h-8 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-extrabold text-stone-900">성도 안전 수칙</h2>
+          <p class="text-xs text-stone-500">모두의 안전을 위해 꼭 지켜주시기 바랍니다</p>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-xs text-stone-700">
+        <div class="flex items-start gap-2.5 p-3 rounded-2xl bg-rose-50/80 border border-rose-200">
+          <i class="fa-solid fa-ban text-rose-600 text-sm mt-0.5"></i>
+          <div>
+            <strong class="text-rose-900 block font-bold">자전거·킥보드·인라인 통행 전면 금지</strong>
+            공원 둘레길 규정에 따라 바퀴 달린 이동수단은 출입이 금지되어 있습니다. 어린이를 포함해 전원 도보로 이동해 주세요.
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2.5 p-3 rounded-2xl bg-stone-50 border border-stone-200">
+          <i class="fa-solid fa-vest text-emerald-700 text-sm mt-0.5"></i>
+          <div>
+            <strong class="text-stone-900 block font-bold">4단계 이동 안전요원 협조</strong>
+            선두, 중간1, 중간2, 후미 전담 안전요원(남선교회)이 상시 동행합니다. 도움이 필요하시면 안전요원에게 말씀해 주세요.
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2.5 p-3 rounded-2xl bg-stone-50 border border-stone-200">
+          <i class="fa-solid fa-temperature-arrow-down text-blue-600 text-sm mt-0.5"></i>
+          <div>
+            <strong class="text-stone-900 block font-bold">환절기 체온 유지 & 편안한 신발</strong>
+            11월 초 호숫가 바람으로 체감 온도가 낮을 수 있습니다. <strong>따뜻한 외투(바람막이/경량패딩)</strong>와 편안한 <strong>운동화</strong>를 착용해 주세요.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 하단 빠른 액션 버튼바 -->
+    <div class="space-y-2 pt-2">
+      <button onclick="shareLink()" class="w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold text-sm shadow-lg shadow-amber-600/25 flex items-center justify-center gap-2 active:scale-[0.99] transition">
+        <i class="fa-solid fa-share-nodes"></i>
+        <span>목장 카카오톡 단체방에 가이드 공유하기</span>
+      </button>
+
+      <button onclick="openEmergencyModal()" class="w-full py-3.5 px-4 rounded-2xl bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 font-bold text-xs flex items-center justify-center gap-2 transition active:scale-[0.99]">
+        <i class="fa-solid fa-phone text-rose-600"></i>
+        <span>당일 비상 연락처 및 진행 본부 문의</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="bg-stone-900 text-stone-400 text-center py-6 px-4 text-xs space-y-2">
+    <div class="flex justify-center items-center gap-2 text-stone-200 font-bold">
+      <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+      <span>삼호침례교회 창립 50주년 행사준비위원회</span>
+    </div>
+    <p class="text-[11px] text-stone-500">
+      1976 - 2026 희년의 기쁨과 감사를 온 교우와 함께 나눕니다.
+    </p>
+  </footer>
+
+  <!-- 알림 토스트 메시지 -->
+  <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-stone-900/90 backdrop-blur text-white px-5 py-3 rounded-full text-xs font-semibold shadow-2xl flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none translate-y-3">
+    <i class="fa-solid fa-circle-check text-amber-400"></i>
+    <span id="toastText">링크가 복사되었습니다.</span>
+  </div>
+
+  <!-- 비상 연락망 모달 다이얼로그 -->
+  <div id="modalEmergency" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-5 max-w-xs w-full shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+        <h3 class="font-extrabold text-stone-900 text-sm flex items-center gap-1.5">
+          <i class="fa-solid fa-headset text-rose-600"></i> 행사 당일 비상 연락망
+        </h3>
+        <button onclick="closeEmergencyModal()" class="text-stone-400 hover:text-stone-600 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-2 text-xs">
+        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+          <div>
+            <div class="font-bold text-stone-800">현장 안전 총괄</div>
+            <div class="text-[11px] text-stone-500">정영식 안수집사</div>
+          </div>
+          <span class="text-xs font-bold text-rose-700 bg-rose-50 px-2.5 py-1 rounded-full border border-rose-200">안전팀</span>
+        </div>
+
+        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+          <div>
+            <div class="font-bold text-stone-800">차량 및 수송</div>
+            <div class="text-[11px] text-stone-500">이상욱 안수집사</div>
+          </div>
+          <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">차량팀</span>
+        </div>
+
+        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+          <div>
+            <div class="font-bold text-stone-800">행사 진행 본부</div>
+            <div class="text-[11px] text-stone-500">잔디광장 운영 부스</div>
+          </div>
+          <span class="text-xs font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">운영본부</span>
+        </div>
+      </div>
+
+      <button onclick="closeEmergencyModal()" class="w-full py-3 rounded-2xl bg-stone-900 text-white font-bold text-xs active:scale-[0.99] transition">
+        닫기
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // 교통편 탭 전환 함수
+    function changeTransportTab(mode) {
+      const btnBus = document.getElementById('btnTabBus');
+      const btnCar = document.getElementById('btnTabCar');
+      const contentBus = document.getElementById('contentBus');
+      const contentCar = document.getElementById('contentCar');
+
+      if (mode === 'bus') {
+        btnBus.className = "py-2.5 rounded-xl transition-all duration-200 bg-white text-stone-900 shadow-sm flex items-center justify-center gap-1.5";
+        btnCar.className = "py-2.5 rounded-xl transition-all duration-200 text-stone-500 hover:text-stone-800 flex items-center justify-center gap-1.5";
+        contentBus.classList.remove('hidden');
+        contentCar.classList.add('hidden');
+      } else {
+        btnCar.className = "py-2.5 rounded-xl transition-all duration-200 bg-white text-stone-900 shadow-sm flex items-center justify-center gap-1.5";
+        btnBus.className = "py-2.5 rounded-xl transition-all duration-200 text-stone-500 hover:text-stone-800 flex items-center justify-center gap-1.5";
+        contentCar.classList.remove('hidden');
+        contentBus.classList.add('hidden');
+      }
+    }
+
+    // 토스트 팝업 표시
+    function showNotification(msg) {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastText');
+      text.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+      }, 2500);
+    }
+
+    // 클립보드 공유 링크 복사 (iframe 및 모바일 호환 document.execCommand 방식)
+    function shareLink() {
+      const dummy = document.createElement('textarea');
+      dummy.value = window.location.href;
+      document.body.appendChild(dummy);
+      dummy.select();
+      try {
+        document.execCommand('copy');
+        showNotification('목장 단체방에 전달할 안내 링크가 복사되었습니다!');
+      } catch (err) {
+        showNotification('안내 링크 복사 준비가 완료되었습니다.');
+      }
+      document.body.removeChild(dummy);
+    }
+
+    // 비상 연락망 모달 열기/닫기
+    function openEmergencyModal() {
+      document.getElementById('modalEmergency').classList.remove('hidden');
+    }
+    function closeEmergencyModal() {
+      document.getElementById('modalEmergency').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
